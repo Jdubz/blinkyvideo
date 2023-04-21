@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "nedb-async": "^0.1.6",
+    "tslib": "^2.5.0"
+  }
+}
