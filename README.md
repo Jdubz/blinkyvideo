@@ -9,7 +9,7 @@ used to edit the settings controlling the camera feed and canvas display.
 ## video-feedback
 tyoescript react
 aka: the video app
-used to render the vamera feed onto a canvas with some effects.
+used to render the camera feed onto a canvas with some effects.
 
 ## server
 typescript express routing-controllers
