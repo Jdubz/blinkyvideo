@@ -19,13 +19,16 @@ export class App {
   public env: string;
   public port: string | number;
   public socket: SocketService;
+  public server: http.Server;
 
   constructor(routes: Routes[]) {
     this.app = express();
     this.env = NODE_ENV || 'development';
-    this.port = PORT || 3000;
-    const server = http.createServer(this.app);
-    const io = new Socket(server);
+    this.port = PORT || 3333;
+    this.server = http.createServer(this.app);
+    const io = new Socket(this.server, {
+      cors: { origin: 'http://localhost:3000' },
+    });
     this.socket = new SocketService(io);
 
     this.initializeMiddlewares();
@@ -34,7 +37,7 @@ export class App {
   }
 
   public listen() {
-    this.app.listen(this.port, () => {
+    this.server.listen(this.port, () => {
       logger.info(`=================================`);
       logger.info(`======= ENV: ${this.env} =======`);
       logger.info(`🚀 App listening on the port ${this.port}`);

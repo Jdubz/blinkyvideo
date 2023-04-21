@@ -1,4 +1,5 @@
 import { Server as Socket } from 'socket.io';
+import { logger } from '@utils/logger';
 
 export class SocketService {
   io: Socket;
@@ -10,7 +11,11 @@ export class SocketService {
 
   initEvents() {
     this.io.on('connection', socket => {
-      console.log('connection', socket);
+      logger.info('connection', socket);
+    });
+
+    this.io.on('hello', arg => {
+      logger.info('hello', arg);
     });
   }
 }
