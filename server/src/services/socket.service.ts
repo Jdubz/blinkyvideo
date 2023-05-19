@@ -7,15 +7,13 @@ export class SocketService {
 
   constructor(socket: Socket) {
     this.io = socket;
+    this.initialize();
   }
 
-  initEvents() {
+  initialize() {
     this.io.on('connection', socket => {
-      logger.info('connection', socket);
-    });
-
-    this.io.on('hello', arg => {
-      logger.info('hello', arg);
+      socket.on('message', logger.info);
+      socket.emit('foo', 'connection');
     });
   }
 }
