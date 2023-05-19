@@ -15,7 +15,7 @@ const utils = {
    */
   calcIncircle(A: Array<number>, B : Array<number>, C: Array<number>) {
       function lineLen(p1 : Array<number>, p2: Array<number>) {
-        console.log('lineLen', arguments);
+        // console.log('lineLen', arguments);
 
           const dx = p2[0] - p1[0],
                 dy = p2[1] - p1[1];
@@ -54,7 +54,7 @@ const utils = {
    * https://math.stackexchange.com/questions/17561/how-to-shrink-a-triangle
    */
   expandTriangle(A : Array<number>, B : Array<number>, C : Array<number>, amount :number) {
-    console.log('expandTriangle', arguments);
+    // console.log('expandTriangle', arguments);
 
       const incircle = this.calcIncircle(A, B, C),
             c = incircle.c,
@@ -161,7 +161,7 @@ const utils = {
       ctx.restore();
       
       
-      // return;
+      return;
       
       //DEBUG - https://en.wikipedia.org/wiki/Incircle_and_excircles_of_a_triangle
       const incircle = this.calcIncircle(d1, d2, d3),
@@ -190,7 +190,7 @@ const utils = {
     d2: Array<number>, 
     d3: Array<number>
   ) {
-    console.log('drawTriangle', arguments);
+    // console.log('drawTriangle', arguments);
     // function movePoint(p: Array<number>, exampleSource: Array<number>, exampleTarget: Array<number>) {
     //     const dx = exampleTarget[0]/exampleSource[0],
     //           dy = exampleTarget[1]/exampleSource[1],
@@ -222,7 +222,7 @@ function updateUI(
   h: number, 
   //handles: Array<HTMLElement>
 ) {
-  console.log('updateUI', arguments);
+  // console.log('updateUI', arguments);
 
   ctx.clearRect(0,0, w,h);
   
@@ -347,7 +347,7 @@ function App() {
         canvasRef.current.height, 
         // Array(5).fill(document.createElement('div'))
       );
-    }, 1000);
+    }, 33);
     return () => clearInterval(interval);
   }, [videoRef, canvasRef]);
 
