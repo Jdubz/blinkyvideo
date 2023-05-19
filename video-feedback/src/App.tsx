@@ -324,27 +324,19 @@ function App() {
         bufferCanvasContext.drawImage(videoRef.current, 0, 0);
       }
 
-      // const corners = [
-      //   [0,0],
-      //   [canvasRef.current.width, 0],
-      //   [0,canvasRef.current.height],
-      //   [canvasRef.current.width,canvasRef.current.height]
-      // ];
-
-      // const points = [
-      //   corners[0],
-      //   corners[1],
-      //   utils.findCenter(corners),
-      //   corners[2],
-      //   corners[3]
-      // ];
-
-      const points = [
+      const corners = [
         [0,0],
         [canvasRef.current.width, 0],
-        [canvasRef.current.width/2,canvasRef.current.height/2],
         [0,canvasRef.current.height],
         [canvasRef.current.width,canvasRef.current.height]
+      ];
+
+      const points = [
+        corners[0],
+        corners[1],
+        utils.findCenter(corners),
+        corners[2],
+        corners[3]
       ];
 
       updateUI(
