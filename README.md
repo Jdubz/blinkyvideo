@@ -16,7 +16,6 @@ typescript express routing-controllers
 manages communication between the application and serves both applications.
 
 ### TODO
-- render camera feed to canvas
 - (corner pin camera to projection boundaries)[https://codepen.io/Sphinxxxx/pen/QmdGPW]
 
 ### Backlog
